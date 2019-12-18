@@ -1,6 +1,6 @@
 # Johns Hopkins University, Getting and Cleaning Data course project
-
 ==================================================================
+
 Ricardo Leon
 
 www.ricardoleoncorreia.com
