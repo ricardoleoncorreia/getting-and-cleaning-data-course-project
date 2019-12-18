@@ -1,10 +1,8 @@
 # Johns Hopkins University, Getting and Cleaning Data course project
-==================================================================
 
-Ricardo Leon
+## Ricardo Leon
 
-www.ricardoleoncorreia.com
-==================================================================
+## www.ricardoleoncorreia.com
 
 
 Expected outputs
