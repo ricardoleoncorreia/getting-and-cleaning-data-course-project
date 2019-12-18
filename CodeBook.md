@@ -96,6 +96,7 @@ Helper Functions (extract.R)
 ============================
 
 check_downloaded_data <- if data doesn't exist in root folder, execute download
+
 download_data <- download data from url
 
 
@@ -103,10 +104,15 @@ Helper Functions (transform.R)
 ==============================
 
 get_mean_and_std_columns <- return boolean vector with coincidences for 'mean' and 'std'
+
 save_in_file <- save data in txt file
+
 extract_std_and_mean <- return dataset only with mean and std columns and save selected names in txt file
+
 name_activities <- substitute activities names in main dataset
+
 makeVariablesNamesUserFriendly <- make variables user friendly
+
 set_variable_names <- set column names
 
 
@@ -114,7 +120,11 @@ Helper Functions (load.R)
 =========================
 
 get_data_from_path <- load data from specified path
+
 get_sub_dataset <- load training/test set
+
 get_full_dataset <- merge all training/test data
+
 get_features <- load features from file
+
 get_activities <- load activities from file
