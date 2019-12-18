@@ -1,8 +1,8 @@
-==================================================================
-Johns Hopkins University, Getting and Cleaning Data course project
-Version 1.0
+# Johns Hopkins University, Getting and Cleaning Data course project
+
 ==================================================================
 Ricardo Leon
+
 www.ricardoleoncorreia.com
 ==================================================================
 
