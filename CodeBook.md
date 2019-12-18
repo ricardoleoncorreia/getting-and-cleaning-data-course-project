@@ -12,40 +12,22 @@ Expected outputs
 * Summary tidy dataset with averages grouped by subject and activity (named summary_dataset.txt)
 
 
-Feature Selection (taken from the original features info doc)
-=============================================================
+Feature Selection (modified version of original features_info.txt)
+==================================================================
 
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals TimeAcc-XYZ and TimeGyro-XYZ. These time domain signals were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (TimeBodyAcc-XYZ and TimeGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
 Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
-Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing FrequencyBodyAcc-XYZ, FrequencyBodyAccJerk-XYZ, FrequencyBodyGyro-XYZ, FrequencyBodyAccJerkMag, FrequencyBodyGyroMag, FrequencyBodyGyroJerkMag.
 
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
-
 The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-std(): Standard deviation
+mean: Mean value
+std: Standard deviation
 
 The complete list of variables of each feature vector is available in 'features.txt'
 
@@ -108,3 +90,31 @@ The detail for each step is described below
 1. Group data by "activity" and "subject"
 2. Get all mean values by groups
 3. Save data in summary_dataset.txt
+
+
+Helper Functions (extract.R)
+============================
+
+check_downloaded_data <- if data doesn't exist in root folder, execute download
+download_data <- download data from url
+
+
+Helper Functions (transform.R)
+==============================
+
+get_mean_and_std_columns <- return boolean vector with coincidences for 'mean' and 'std'
+save_in_file <- save data in txt file
+extract_std_and_mean <- return dataset only with mean and std columns and save selected names in txt file
+name_activities <- substitute activities names in main dataset
+makeVariablesNamesUserFriendly <- make variables user friendly
+set_variable_names <- set column names
+
+
+Helper Functions (load.R)
+=========================
+
+get_data_from_path <- load data from specified path
+get_sub_dataset <- load training/test set
+get_full_dataset <- merge all training/test data
+get_features <- load features from file
+get_activities <- load activities from file

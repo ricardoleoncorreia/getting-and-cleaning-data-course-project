@@ -22,7 +22,7 @@ str(dataset)
 
 
 ## Appropriately labels the data set with descriptive variable names
-ordered_features <- get_data_from_path("features.txt")[, 2]
+ordered_features <- get_data_from_path("new_features.txt")[, 1]
 dataset <- set_variable_names(dataset, features)
 save_in_file(dataset[, ordered_features], "tidy_dataset.txt")
 str(dataset[, ordered_features])
@@ -32,5 +32,5 @@ str(dataset[, ordered_features])
 average_dataset <- dataset %>%
                         group_by(activity, subject) %>%
                         summarise_all(funs(mean))
-save_in_file(average_dataset, "summary_dataset.txt")
+save_in_file(average_dataset, "summary_dataset.txt", column.names = TRUE)
 str(average_dataset)
